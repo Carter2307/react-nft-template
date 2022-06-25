@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+//utils
+@import "./utils/variables";
+@import "./utils/responsive";
+@import "./utils/colors";
+@import "./utils/functions";
+@import "./utils/mixins";
+
+//shared
+// @import "./shared/container";
+// @import "./shared/titles";
+// @import "./shared/sections";
+
+//base
+@import "./base/reset";
+@import "./base/font";
+@import "./base/config";
+
+
+
+//Components
+@import "./components/buttons";
+@import "./components/search";
+@import "./components/app";
+@import "./components/hero";
+
+//Layout
+@import "./layout/navbar";
+@import "./layout/footer";
+
+

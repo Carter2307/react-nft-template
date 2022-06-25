@@ -1,0 +1,33 @@
+.search {
+	border-radius: rem(10px);
+	background: $color-gray-100;
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+}
+
+.search__icon {
+	@include flex-center;
+	max-width: rem(48px);
+	padding: rem(12px) rem(16px);
+	@include flex-center;
+
+	svg {
+		height: 70%;
+	}
+}
+
+.search__input {
+	all: unset;
+	flex: auto;
+	display: inline-block;
+	background-color: transparent;
+	padding: rem(12px) 0;
+	outline: $accent-1;
+	font-size: $text-sm;
+	color: $color-gray-700;
+	margin-right: rem(16px);
+	&::placeholder {
+		color: $color-gray-400;
+	}
+}

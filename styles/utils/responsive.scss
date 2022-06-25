@@ -1,0 +1,37 @@
+@use 'sass:map';
+
+$breakpoint-list: (
+	'sm': 640,
+	'md': 768,
+	'lg': 1024,
+	'xlg': 1280,
+	'2xlg': 1536,
+);
+
+@mixin breakpoints($target) {
+	$value: map.get($breakpoint-list, $target);
+	@media (min-width: #{$value}px) {
+		@content;
+	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+.visible-flex {
+	display: flex !important;
+}
+
+.mobile-only {
+	@include breakpoints('lg') {
+		display: none !important;
+	}
+}
+
+.desktop-only {
+	display: none;
+	@include breakpoints('lg') {
+		display: inline-block;
+	}
+}

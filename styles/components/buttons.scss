@@ -1,0 +1,60 @@
+.button {
+	all: unset;
+	cursor: pointer;
+	padding: rem(12px);
+	border-radius: rem(10px);
+	@include flex-center;
+}
+
+.button-primary {
+	background-color: $color-gray-800;
+	color: $color-white;
+}
+
+//Theme swither
+%icon {
+	height: rem(32px);
+	width: rem(32px);
+	border-radius: rem(32px);
+	@include flex-center;
+	padding: rem(6px);
+
+	svg path {
+		stroke: $color-black;
+	}
+}
+
+.navbar__cta__themeSwither {
+	padding: 0;
+}
+
+.navbar__cta__themeSwither__label {
+	border-radius: 50px;
+	background-color: $accent-2;
+	padding: rem(6px);
+	@include flex-center;
+
+	&__container {
+		display: inline-flex;
+	}
+
+	&-light {
+		@extend %icon;
+
+		&.theme-active {
+			svg {
+				transform: scale(1.2);
+			}
+
+			svg path {
+				stroke: $color-white;
+			}
+
+			background-color: $color-gray-800;
+		}
+	}
+
+	&-dark {
+		@extend %icon;
+	}
+}
