@@ -2,6 +2,11 @@
 @import url('http://fonts.cdnfonts.com/css/euclid-circular-a');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .text {
-    display: inline-block;
+  display: inline-block;
 }
