@@ -1,0 +1,43 @@
+.productdetails {
+  @include space(16px);
+  padding: rem(24px);
+  border-radius: rem(14px);
+  background-color: white;
+  box-shadow: 0px -2px 7px rgba($color-gray-700, 0.03),
+    0px 14px 45px rgba($color-gray-700, 0.1);
+
+  position: absolute;
+  //transform: translate(rem(0px), rem(-86px));
+  max-width: rem(420px);
+
+  @include breakpoints('lg') {
+    width: rem(420px);
+    //transform: translate(rem(20px), rem(-86px));
+    padding: rem(40px);
+  }
+}
+
+.productdetails__currentbids {
+  @include flex-between;
+}
+
+.productdetails__currentbids__price {
+  @include space(8px);
+
+  p {
+    display: inline-flex;
+    gap: rem(4px);
+  }
+}
+
+.productdetails__currentbids__endate {
+  @include space(8px);
+}
+
+.productdetails__recentbids {
+  @include space(12px);
+
+  @include breakpoints('lg') {
+    @include space(16px);
+  }
+}

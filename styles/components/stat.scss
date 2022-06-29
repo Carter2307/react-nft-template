@@ -1,0 +1,51 @@
+.stat {
+  position: relative;
+  max-width: max-content;
+  color: $color-gray-800;
+  @include space(4px);
+
+  &__value {
+    font-family: $font-space-grotesk;
+    font-weight: bold;
+    font-size: $text-7xl;
+  }
+
+  &__type {
+    color: $color-gray-400;
+    font-size: $text-sm;
+    font-weight: 400;
+  }
+
+  ::after {
+    content: '';
+    display: inline-block;
+    height: rem(11px);
+    width: 100%;
+    background-color: $accent-1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(calc(-50% - 8px));
+    z-index: -1;
+  }
+
+    &:nth-child(2) {
+    margin-left: auto;
+
+    @include breakpoints('md') {
+      margin-left: unset;
+    }
+  }
+}
+
+.stats__container {
+  max-width: rem(483px);
+
+  @include breakpoints('sm') {
+    display: flex;
+    justify-content: space-between;
+    margin-left: rem(40px);
+  }
+
+}

@@ -1,32 +1,33 @@
 @charset "utf-8";
 
 //utils
-@import "./utils/variables";
-@import "./utils/responsive";
-@import "./utils/colors";
-@import "./utils/functions";
-@import "./utils/mixins";
+@import './utils/variables';
+@import './utils/responsive';
+@import './utils/colors';
+@import './utils/functions';
+@import './utils/mixins';
 
 //shared
 // @import "./shared/container";
-// @import "./shared/titles";
+@import './shared/helpers';
+@import './shared/text';
+@import './shared/title';
 // @import "./shared/sections";
 
 //base
-@import "./base/reset";
-@import "./base/font";
-@import "./base/config";
-
-
+@import './base/reset';
+@import './base/font';
+@import './base/config';
 
 //Components
-@import "./components/buttons";
-@import "./components/search";
-@import "./components/app";
-@import "./components/hero";
+@import './components/buttons';
+@import './components/search';
+@import './components/productdetails';
+@import './components/stat';
+@import './components/app';
+@import './components/hero';
+@import './components/bids';
 
 //Layout
-@import "./layout/navbar";
-@import "./layout/footer";
-
-
+@import './layout/navbar';
+@import './layout/footer';

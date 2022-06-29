@@ -1,0 +1,36 @@
+.bids {
+  @include flex-center;
+  position: relative;
+  background-color: $accent-1;
+  padding: rem(4px) rem(12px);
+  border-radius: rem(6px);
+}
+
+.bids__images {
+  height: rem(24px);
+  width: rem(24px);
+  border-radius: 50%;
+  border: 2px solid $accent-1;
+
+  display: inline-block;
+  position: absolute;
+  left: rem(-8px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include breakpoints('md') {
+    height: rem(35px);
+    width: rem(35px);
+  }
+
+}
+
+.bids__price {
+  margin-left: rem(18px);
+  font-size: $text-xs;
+  font-weight: 500;
+
+  @include breakpoints('md') {
+    font-size: $text-sm;
+  }
+}

@@ -1,60 +1,69 @@
 .button {
-	all: unset;
-	cursor: pointer;
-	padding: rem(12px);
-	border-radius: rem(10px);
-	@include flex-center;
+  all: unset;
+  cursor: pointer;
+  padding: rem(12px) rem(16px);
+  border-radius: rem(10px);
+  @include flex-center;
+  font-weight: 400;
+  width: max-content;
+  box-shadow: 0 6px 17px rgba($accent-2, .26);
+
+  font-size: $text-sm;
+  @include breakpoints('lg') {
+    padding: rem(12px) rem(18px);
+    font-size: $text-base;
+  }
 }
 
 .button-primary {
-	background-color: $color-gray-800;
-	color: $color-white;
+  background-color: $accent-2;
+  color: $color-black;
 }
 
 //Theme swither
 %icon {
-	height: rem(32px);
-	width: rem(32px);
-	border-radius: rem(32px);
-	@include flex-center;
-	padding: rem(6px);
+  height: rem(32px);
+  width: rem(32px);
+  border-radius: rem(32px);
+  @include flex-center;
+  padding: rem(6px);
 
-	svg path {
-		stroke: $color-black;
-	}
+  svg path {
+    stroke: $color-black;
+  }
 }
 
 .navbar__cta__themeSwither {
-	padding: 0;
+  padding: 0;
 }
 
 .navbar__cta__themeSwither__label {
-	border-radius: 50px;
-	background-color: $accent-2;
-	padding: rem(6px);
-	@include flex-center;
+  border-radius: 50px;
+  background-color: $accent-2;
+  padding: rem(6px);
+  @include flex-center;
 
-	&__container {
-		display: inline-flex;
-	}
+  &__container {
+    display: inline-flex;
+  }
 
-	&-light {
-		@extend %icon;
+  &-light {
+    @extend %icon;
 
-		&.theme-active {
-			svg {
-				transform: scale(1.2);
-			}
+    &.theme-active {
+      svg {
+        transform: scale(1.2);
+      }
 
-			svg path {
-				stroke: $color-white;
-			}
+      svg path {
+        stroke: $color-white;
+      }
 
-			background-color: $color-gray-800;
-		}
-	}
+      background-color: $color-gray-800;
+    }
+  }
 
-	&-dark {
-		@extend %icon;
-	}
+  &-dark {
+    @extend %icon;
+  }
 }

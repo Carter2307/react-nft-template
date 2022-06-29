@@ -1,37 +1,56 @@
 @use 'sass:map';
 
 $breakpoint-list: (
-	'sm': 640,
-	'md': 768,
-	'lg': 1024,
-	'xlg': 1280,
-	'2xlg': 1536,
+  'sm': 640,
+  'md': 768,
+  'lg': 1024,
+  'xlg': 1280,
+  '2xlg': 1536,
 );
 
-@mixin breakpoints($target) {
-	$value: map.get($breakpoint-list, $target);
-	@media (min-width: #{$value}px) {
-		@content;
-	}
+@mixin breakpoints($target, $height: false) {
+  $value: map.get($breakpoint-list, $target);
+
+  @if $value {
+    @if $height {
+      @media (min-height: #{$value}px) {
+        @content;
+      }
+    } @else {
+      @media (min-width: #{$value}px) {
+        @content;
+      }
+    }
+  } @else {
+    @if $height {
+      @media (min-height: #{$target}px) {
+        @content;
+      }
+    } @else {
+      @media (min-width: #{$target}px) {
+        @content;
+      }
+    }
+  }
 }
 
 .hidden {
-	display: none !important;
+  display: none !important;
 }
 
 .visible-flex {
-	display: flex !important;
+  display: flex !important;
 }
 
 .mobile-only {
-	@include breakpoints('lg') {
-		display: none !important;
-	}
+  @include breakpoints('lg') {
+    display: none !important;
+  }
 }
 
 .desktop-only {
-	display: none;
-	@include breakpoints('lg') {
-		display: inline-block;
-	}
+  display: none;
+  @include breakpoints('lg') {
+    display: inline-block;
+  }
 }

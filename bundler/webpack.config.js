@@ -4,16 +4,6 @@ const webpack = require('webpack')
 //-----plugins-----//
 
 /**
- * Optimisation engine
- */
-const TerserPlugin = require('terser-webpack-plugin')
-
-/**
- * Minimize image size
- */
-
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
-/**
  * Un plugin webpack pour supprimer/nettoyer
  * votre ou vos dossiers de construction.
  */
@@ -45,120 +35,100 @@ const dirNode = 'node_modules'
 
 
 module.exports = {
-	entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
+  entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
 
-	//Simplifie l'utilisation des chemin -> path
-	resolve: {
-		modules: [dirApp, dirImages, dirShared, dirVideos, dirStyles, dirNode],
-	},
+  //Simplifie l'utilisation des chemin -> path
+  resolve: {
+    modules: [dirApp, dirImages, dirShared, dirVideos, dirStyles, dirNode],
+  },
 
-	plugins: [
-		new webpack.DefinePlugin({
-			IS_DEVELOPPEMENT,
-		}),
+  plugins: [
+    new webpack.DefinePlugin({
+      IS_DEVELOPPEMENT,
+    }),
 
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: './shared',
-					to: '',
-				},
-			],
-		}),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './shared',
+          to: '',
+        },
+      ],
+    }),
 
-		new MiniCssExtractPlugin({
-			filename: '[name].css',
-		}),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
 
-		new HtmlWebpackPlugin({
-			template: path.join(__dirname, '../index.html'),
-		}),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, '../index.html'),
+    }),
 
-		new CleanWebpackPlugin(),
-	],
-	module: {
-		rules: [
-			//HTML
-			// {
-			// 	test: /\.html$/,
-			// 	use: {
-			// 		loader: 'html-loader',
-			// 	},
-			// },
-			//JS
-			{
-				test: /\.js$/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react'],
-					},
-				},
-			},
+    new CleanWebpackPlugin(),
+  ],
+  module: {
+    rules: [
+      //HTML
+      // {
+      // 	test: /\.html$/,
+      // 	use: {
+      // 		loader: 'html-loader',
+      // 	},
+      // },
+      //JS
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
 
-			//CSS
-			{
-				test: /\.scss$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: '',
-						},
-					},
-					{
-						loader: 'css-loader',
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								plugins: [
-									[
-										'postcss-preset-env',
-										{
-											browsers: 'last 2 versions ',
-										},
-									],
-								],
-							},
-						},
-					},
-					{
-						loader: 'sass-loader',
-					},
-				],
-			},
+      //CSS
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            },
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    'postcss-preset-env',
+                    {
+                      browsers: 'last 2 versions ',
+                    },
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
 
-			//IMAGES
-			{
-				test: /\.(png|jpg|gif|jpe?g|svg|woff2?|fnt|webp|mp4)$/,
-				type: 'asset/resource',
-				generator: {
-					filename: '[name].[hash].[ext]',
-				},
-			},
-		],
-	},
-	optimization: {
-		minimize: true,
-		minimizer: [
-			new TerserPlugin({
-				extractComments: false,
-			}),
-			new ImageMinimizerPlugin({
-				minimizer: {
-					implementation: ImageMinimizerPlugin.imageminMinify,
-					options: {
-						plugins: [
-							['gifsicle', { interlaced: true }],
-							['jpegtran', { progressive: true }],
-							['optipng', { optimizationLevel: 8 }],
-						],
-					},
-				},
-			}),
-		],
-	},
+      //IMAGES
+      {
+        test: /\.(png|jpg|gif|jpe?g|svg|woff2?|fnt|webp|mp4)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name].[hash].[ext]',
+        },
+      },
+    ],
+  }
 }
 

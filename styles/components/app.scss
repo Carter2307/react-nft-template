@@ -1,6 +1,18 @@
 .main {
+  width: 100%;
+  @include breakpoints('xlg', false) {
+    margin-top: rem(32px);
+  }
+
+  // @include breakpoints('900', true) {
+  //   height: calc(100vh - rem(92px));
+  //   @include flex-center;
+  // }
 }
 
 .main__container {
+  padding-top: rem(32px);
 	@include container;
+  width: 100%;
+  flex: none;
 }

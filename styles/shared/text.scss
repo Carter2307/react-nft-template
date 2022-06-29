@@ -1,0 +1,24 @@
+.text-highlight {
+  display: inline-block;
+  width: 100%;
+  color: $accent-1;
+  position: relative;
+
+  &__line {
+    position: absolute;
+    bottom: rem(-4px);
+    left: 0;
+    right: 0;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.paragraphe {
+  line-height: 1.5;
+  color: $color-gray-500;
+
+  @include breakpoints('sm') {
+    font-size: $text-lg;
+  }
+}

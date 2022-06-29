@@ -1,36 +1,54 @@
+%cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
 @mixin flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin flex-between {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+@mixin mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin mx-w-auto($width) {
+  max-width: $width;
+  @include mx-auto()
 }
 
 @mixin container {
-	padding-right: rem(24px);
-	padding-left: rem(24px);
+  padding-right: rem(24px);
+  padding-left: rem(24px);
 
-	@include breakpoints('md') {
-		padding-right: rem(32px);
-		padding-left: rem(32px);
-	}
+  @include breakpoints('md') {
+    padding-right: rem(32px);
+    padding-left: rem(32px);
+  }
 
-	@include breakpoints('lg') {
-		padding-right: rem(72px);
-		padding-left: rem(72px);
-	}
+  @include breakpoints('lg') {
+    padding-right: rem(72px);
+    padding-left: rem(72px);
+  }
 
-	@include breakpoints('xlg') {
-		padding-right: calc(((100% - $container) / 2));
-		padding-left: calc(((100% - $container) / 2));
-	}
+  @include breakpoints('xlg') {
+    padding-right: calc(((100% - $container) / 2));
+    padding-left: calc(((100% - $container) / 2));
+  }
 
-	@include breakpoints('2xlg') {
-		padding-right: calc(((100% - $container) / 2));
-		padding-left: calc(((100% - $container) / 2));
-	}
+  @include breakpoints('2xlg') {
+    padding-right: calc(((100% - $container) / 2));
+    padding-left: calc(((100% - $container) / 2));
+  }
 }

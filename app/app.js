@@ -2,15 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 //Components
-import Navbar from './components/navbar.js'
-import Main from './components/main.js'
+import Navbar from './components/navbar'
+import Main from './components/main'
 
 function App() {
 	return (
-		<>
+		<React.Fragment>
 			<Navbar></Navbar>
 			<Main></Main>
-		</>
+		</React.Fragment>
 	)
 }
-ReactDOM.render(<App />, document.querySelector('#root'))
+
+ReactDOM.createRoot(document.querySelector('#root')).render(<App />)
