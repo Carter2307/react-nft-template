@@ -1,6 +1,5 @@
 .text-highlight {
   display: inline-block;
-  width: 100%;
   color: $accent-1;
   position: relative;
 
@@ -11,6 +10,7 @@
     right: 0;
     display: inline-block;
     width: 100%;
+    stroke: rem(2px);
   }
 }
 

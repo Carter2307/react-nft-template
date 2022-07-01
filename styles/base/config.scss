@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 html {
@@ -20,9 +19,5 @@ body {
   overflow-x: hidden;
   font-size: $base-font;
   overflow: auto;
-
-
-   *, *::after, *::before {
-     // border: 1px solid black;
-  }
+  background: no-repeat center/auto url('images/bg-blends.png');
 }

@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require('path')
 
-const { merge } = require('webpack-merge');
+const { merge } = require('webpack-merge')
 
-const config = require('./webpack.config');
+const config = require('./webpack.config')
 
 module.exports = merge(config, {
   mode: 'development',
@@ -21,8 +21,4 @@ module.exports = merge(config, {
     assetModuleFilename: '[name][ext]',
     clean: true,
   },
-
-
-
 })
-

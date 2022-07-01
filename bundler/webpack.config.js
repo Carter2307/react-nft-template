@@ -9,10 +9,10 @@ const webpack = require('webpack')
  */
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
- /**
-  * Copie des fichiers individuels ou des répertoires entiers,
-  * qui existent déjà, dans le répertoire de construction
-  */
+/**
+ * Copie des fichiers individuels ou des répertoires entiers,
+ * qui existent déjà, dans le répertoire de construction
+ */
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 /**
@@ -21,25 +21,24 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
  */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const IS_DEVELOPPEMENT = process.ENV === 'dev'
 
 //Resolve directory
 const dirApp = path.join(__dirname, '../app')
-const dirImages = path.join(__dirname, '../images')
+//const dirImages = path.join(__dirname, '../images')
 const dirShared = path.join(__dirname, '../shared')
 const dirVideos = path.join(__dirname, '../videos')
 const dirStyles = path.join(__dirname, '../styles')
 const dirNode = 'node_modules'
-
 
 module.exports = {
   entry: [path.join(dirApp, 'app.js'), path.join(dirStyles, 'main.scss')],
 
   //Simplifie l'utilisation des chemin -> path
   resolve: {
-    modules: [dirApp, dirImages, dirShared, dirVideos, dirStyles, dirNode],
+    modules: [dirApp, dirShared, dirVideos, dirStyles, dirNode],
   },
 
   plugins: [
@@ -129,6 +128,5 @@ module.exports = {
         },
       },
     ],
-  }
+  },
 }
-
