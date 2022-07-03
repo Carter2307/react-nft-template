@@ -14,7 +14,11 @@ class App extends React.Component {
 
   initComponents() {
     this.elements = new GetElement().elements
-    this.menu = new Menu(
+    this.menuConfig()
+  }
+
+  menuConfig() {
+    new Menu(
       this.elements.navbar.container,
       this.elements.navbar.button,
       this.elements.navbar.menu,
@@ -36,14 +40,5 @@ class App extends React.Component {
     )
   }
 }
-
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <Navbar></Navbar>
-//       <Main></Main>
-//     </React.Fragment>
-//   )
-// }
 
 ReactDOM.createRoot(document.querySelector('#root')).render(<App />)
