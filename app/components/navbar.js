@@ -83,13 +83,13 @@ const Navbar = () => {
               <img src="svg/icon-search.svg"></img>
             </div>
             <Toggler />
-            <a href="#" className="button button-primary">
+            <a href="#" className="button button-secondary">
               <div className="text">Connect wallet</div>
             </a>
           </div>
         </div>
 
-        <a href="#" className="button button-primary mobile-only">
+        <a href="#" className="button button-secondary mobile-only">
           <svg
             width="16"
             height="16"

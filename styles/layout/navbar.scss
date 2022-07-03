@@ -43,8 +43,13 @@
 
 .navbar__container.-visible-flex {
   .navbar__items {
-    background-color: rgba($color: #ffff, $alpha: 0.8);
-    backdrop-filter: blur(30px);
+    background-color: rgba($color: #fff, $alpha: 1);
+
+    @supports ((-webkit-backdrop-filter: blur(0)) or (backdrop-filter: blur(0)))
+      or (-webkit-backdrop-filter: blur(0)) {
+      background-color: rgba($color: #ffff, $alpha: 0.8);
+      backdrop-filter: blur(30px);
+    }
   }
 
   .navbar__menu__bars {
