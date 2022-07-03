@@ -38,8 +38,21 @@ $breakpoint-list: (
   display: none !important;
 }
 
+.smooth-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.-visible-flex {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
 .visible-flex {
   display: flex !important;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-only {

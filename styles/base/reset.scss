@@ -1,13 +1,14 @@
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 img,
 picture {
-	display: inline-block;
-	object-fit: cover;
-	max-width: 100%;
+  display: inline-block;
+  object-fit: cover;
+  max-width: 100%;
+  image-rendering: pixelated;
 }
 
 h1,
@@ -16,14 +17,14 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 ul[role='list'],
 ol[role='list'] {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 input[type='color'],
@@ -42,5 +43,5 @@ input[type='url'],
 input[type='week'],
 select:focus,
 textarea {
-	font-size: $base-font;
+  font-size: $base-font;
 }
